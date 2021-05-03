@@ -531,7 +531,7 @@ class _TableCalendarState extends State<TableCalendar>
       duration: const Duration(milliseconds: 350),
       switchInCurve: Curves.decelerate,
       transitionBuilder: (child, animation) {
-        return SlideTransition(
+        return SizeTransition(
           position: Tween<Offset>(
                   begin: Offset(widget.calendarController._dx, 0),
                   end: Offset(0, 0))
