@@ -544,7 +544,7 @@ class _TableCalendarState extends State<TableCalendar>
         key: ValueKey(widget.calendarController._pageId),
         resizeDuration: null,
         onDismissed: _onHorizontalSwipe,
-        direction: DismissDirection.horizontal,
+        direction: DismissDirection.vertical,
         child: child,
       ),
     );
