@@ -532,11 +532,11 @@ class _TableCalendarState extends State<TableCalendar>
       switchInCurve: Curves.decelerate,
       transitionBuilder: (child, animation) {
         return SizeTransition(
-          position: Tween<Offset>(
-                  begin: Offset(widget.calendarController._dx, 0),
-                  end: Offset(0, 0))
-              .animate(animation),
-          child: child,
+          sizeFactor: animation,
+          child: ScaleTransition(
+            scale: animation,
+            child: child,
+          ),
         );
       },
       layoutBuilder: (currentChild, _) => currentChild,
