@@ -494,7 +494,7 @@ class _TableCalendarState extends State<TableCalendar>
         );
         break;
       case AvailableGestures.verticalSwipe:
-        wrappedChild = _buildVerticalSwipeWrapper(
+        wrappedChild = _buildHorizontalSwipeWrapper(
           child: wrappedChild,
         );
         break;
