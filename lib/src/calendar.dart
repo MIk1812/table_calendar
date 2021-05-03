@@ -494,7 +494,7 @@ class _TableCalendarState extends State<TableCalendar>
         );
         break;
       case AvailableGestures.verticalSwipe:
-        wrappedChild = _buildHorizontalSwipeWrapper(
+        wrappedChild = _buildVerticalSwipeWrapper(
           child: wrappedChild,
         );
         break;
@@ -531,12 +531,12 @@ class _TableCalendarState extends State<TableCalendar>
       duration: const Duration(milliseconds: 350),
       switchInCurve: Curves.decelerate,
       transitionBuilder: (child, animation) {
-        return SizeTransition(
-          sizeFactor: animation,
-          child: ScaleTransition(
-            scale: animation,
-            child: child,
-          ),
+        return SlideTransition(
+          position: Tween<Offset>(
+                  begin: Offset(widget.calendarController._dx, 0),
+                  end: Offset(0, 0))
+              .animate(animation),
+          child: child,
         );
       },
       layoutBuilder: (currentChild, _) => currentChild,
