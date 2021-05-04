@@ -309,6 +309,16 @@ class _TableCalendarState extends State<TableCalendar>
   }
 
   void _onHorizontalSwipe(DismissDirection direction) {
+    if (direction == DismissDirection.startToEnd) {
+      // Swipe right
+      _selectPrevious();
+    } else {
+      // Swipe left
+      _selectNext();
+    }
+  }
+
+  void _onVerticalSwipe(DismissDirection direction) {
     if (direction == DismissDirection.down) {
       // Swipe right
       _selectPrevious();
@@ -514,15 +524,26 @@ class _TableCalendarState extends State<TableCalendar>
   }
 
   Widget _buildVerticalSwipeWrapper({Widget child}) {
-    return SimpleGestureDetector(
-      child: child,
-      onVerticalSwipe: (direction) {
-        setState(() {
-          widget.calendarController
-              .swipeCalendarFormat(isSwipeUp: direction == SwipeDirection.up);
-        });
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 350),
+      switchInCurve: Curves.decelerate,
+      transitionBuilder: (child, animation) {
+        return SlideTransition(
+          position: Tween<Offset>(
+              begin: Offset(0, widget.calendarController._dx),
+              end: Offset(0, 0))
+              .animate(animation),
+          child: child,
+        );
       },
-      swipeConfig: widget.simpleSwipeConfig,
+      layoutBuilder: (currentChild, _) => currentChild,
+      child: Dismissible(
+        key: ValueKey(widget.calendarController._pageId),
+        resizeDuration: null,
+        onDismissed: _onVerticalSwipe,
+        direction: DismissDirection.vertical,
+        child: child,
+      ),
     );
   }
 
@@ -533,7 +554,7 @@ class _TableCalendarState extends State<TableCalendar>
       transitionBuilder: (child, animation) {
         return SlideTransition(
           position: Tween<Offset>(
-                  begin: Offset(0, widget.calendarController._dx),
+                  begin: Offset(widget.calendarController._dx, 0),
                   end: Offset(0, 0))
               .animate(animation),
           child: child,
@@ -544,7 +565,7 @@ class _TableCalendarState extends State<TableCalendar>
         key: ValueKey(widget.calendarController._pageId),
         resizeDuration: null,
         onDismissed: _onHorizontalSwipe,
-        direction: DismissDirection.vertical,
+        direction: DismissDirection.horizontal,
         child: child,
       ),
     );
