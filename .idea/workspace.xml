@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37dd88a8-3574-4b87-acba-ed49b820bda2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/calendar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/calendar.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1s1QkkIV1uvfQwc9gPi48ZdoZsZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -70,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620043002532</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="t5">
+      <created>1620043394289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620043394289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -78,14 +88,15 @@
     <MESSAGE value="t2" />
     <MESSAGE value="t3" />
     <MESSAGE value="t4" />
-    <option name="LAST_COMMIT_MESSAGE" value="t4" />
+    <MESSAGE value="t5" />
+    <option name="LAST_COMMIT_MESSAGE" value="t5" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1234" y="1488" key="CommitChangelistDialog2" timestamp="1620043002443">
+    <state x="1234" y="1488" key="CommitChangelistDialog2" timestamp="1620043394195">
       <screen x="680" y="1465" width="1440" height="875" />
     </state>
     <state x="1018" y="271" key="CommitChangelistDialog2/680.1465.1440.875/53.25.2507.1415@53.25.2507.1415" timestamp="1620038051968" />
-    <state x="1234" y="1488" key="CommitChangelistDialog2/680.1465.1440.875/53.25.2507.1415@680.1465.1440.875" timestamp="1620043002443" />
+    <state x="1234" y="1488" key="CommitChangelistDialog2/680.1465.1440.875/53.25.2507.1415@680.1465.1440.875" timestamp="1620043394195" />
     <state x="1258" y="1718" key="Vcs.Push.Dialog.v2" timestamp="1620043006188">
       <screen x="680" y="1465" width="1440" height="875" />
     </state>
