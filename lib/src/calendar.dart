@@ -533,7 +533,7 @@ class _TableCalendarState extends State<TableCalendar>
       transitionBuilder: (child, animation) {
         return SlideTransition(
           position: Tween<Offset>(
-                  begin: Offset(widget.calendarController._dy, 0),
+                  begin: Offset(0, widget.calendarController._dx),
                   end: Offset(0, 0))
               .animate(animation),
           child: child,
