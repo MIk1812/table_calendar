@@ -309,7 +309,7 @@ class _TableCalendarState extends State<TableCalendar>
   }
 
   void _onHorizontalSwipe(DismissDirection direction) {
-    if (direction == DismissDirection.up) {
+    if (direction == DismissDirection.down) {
       // Swipe right
       _selectPrevious();
     } else {
